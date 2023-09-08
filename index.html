@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Poppins:wght@400;500;600;700;800;900&family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <script defer src="./signupForm.js"></script>
+  <style>
+    *{
+      box-sizing: border-box;
+      font-family: 'Poppins';
+    }
+    body {
+      background-image: url("images/bg-intro-desktop.png");
+      background-repeat: no-repeat;
+      background-color: hsl(0, 100%, 74%);
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      margin: auto;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 80vh;
+      width: 78%;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+      width: 49%;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .left h1 {
+      color: white;
+      font-size: 42.5px;
+      line-height: 45px;
+      font-weight: 700;
+     }
+    .left p {
+      font-size: 14px;
+      line-height: 25px;
+      font-weight: 400;
+      margin-top: -5px;
+      color: hsla(0, 0%, 96%, 0.9);
+    }
+    .right {
+      width: 48%;
+    }
+    .plan {
+      background-color: hsl(248, 32%, 49%);
+      color: white;
+      text-align: center;
+      font-size: 15px;
+      padding: 3px;
+      font-weight: 600;
+      border-radius: 10px;
+      box-shadow: 0px 8px hsla(249, 10%, 26%, 0.2);
+    }
+    .formarea {
+      background-color: white;
+      padding: 30px 40px 20px 40px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 8px hsla(249, 10%, 26%, 0.2);
+    }
+    
+    .formfields {
+      position: relative;
+      
+    }
+
+    .formfields input {
+      display: block;
+      padding: 12px 0px 14px 30px;
+      border: 1px solid hsla(247, 23%, 77%, 0.6);
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      width: 100%;
+    }
+
+    .formfields input:focus {
+      outline: 0;
+      border: 1px solid hsla(249, 10%, 26%, 0.8);
+    }
+
+    .formfields.error input {
+      border: 2px solid hsl(0, 100%, 74%);
+    } 
+
+    .formfields.success input {
+      border: 2px solid hsl(154, 59%, 51%);
+    }
+
+    .formfields img {
+      visibility: hidden;
+      position: relative;
+      float: right;
+      right: 25px;
+      top: -33px;
+    }
+
+    .formfields.error img{
+      visibility:visible;
+    }
+
+    .formfields.success .formfields{
+      color: hsl(154, 59%, 51%);
+      visibility: visible;
+      
+    }
+    .formfields small {
+      color: hsl(0, 100%, 74%);
+      position: relative;
+      bottom: 0px;
+      right: -210px;
+      visibility: hidden;
+      font-style: italic;
+      font-size: 11.5px;
+    }
+      
+    .formfields.error small {
+      visibility: visible;
+    }
+    .form button {
+      padding: 15px 20px 15px 30px;
+      background-color: hsl(154, 59%, 51%);
+      color: hsla(0, 0%, 96%, 0.9);
+      border-radius: 6px;
+      margin-top: 5px;
+      width: 100%;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+      box-shadow: 0px -3px hsla(249, 10%, 26%, 0.2) inset;
+    }
+    button:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+    .terms {
+      text-align: center;
+    }
+    .attribution { 
+      font-size: 11px;
+      text-align: center; 
+      margin-bottom: -15px;
+      color: white;
+      font-weight: 600;
+    }
+    .attribution a { 
+      color: hsl(228, 45%, 44%);
+     }
+     /* font weights for elements */
+     .bold {
+      font-weight: 700;
+     }
+     .medium {
+      font-weight: 600;
+     }
+     .light {
+      font-weight: 500;
+     }
+     .verylight {
+      font-weight: 400;
+     }
+     
+     #whitesmoke {
+      color: rgba(256, 256, 256, 0.8);
+      font-weight: 400;
+    }
+     #clickbutton {
+      color: hsl(246, 25%, 77%);
+      font-weight: 400;
+      opacity: 0.9;
+      font-size: 10.8px;
+     }
+     #tands {
+      color: hsla(0, 100%, 42%, 0.5);
+      font-weight: 800;
+      font-size: 11px;
+     }
+
+ @media (max-width:1023px) {
+  .container{
+    flex-direction: column;
+  }
+  .left{
+    width:80vw;
+  }
+  .right{
+    width:80vw;
+  }
+}
+@media (max-width:374px) {
+  .form-control small{
+    font-size: 9px;
+  }
+  .formarea{
+    padding: 25px 20px 0px;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>Learn to code by watching others</h1>
+      <p class="whitesmoke">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+         but understanding how developers think is invaluable.
+      </p>
+    </div>
+    <div class="right">
+      <div class="plan">
+        <p>Try it free 7 days <span id="whitesmoke">then &dollar;20/mo. thereafter</span></p> 
+      </div>
+      <div class="formarea">
+        <form class="form" id="form">
+          <div class="form-item">
+            <div class="formfields">
+              <input type="text" name="Fname" id="Fname" placeholder="First Name" value="Jonathan">
+              <img src="./images/icon-error.svg" alt="error" width="20px" height="20px">
+              <small>Error message</small>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="formfields">
+              <input type="text" name="Lname" id="Lname" placeholder="Last Name" autocomplete="off">
+              <img src="./images/icon-error.svg" alt="error" width="20px" height="20px">
+              <small>Error message</small>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="formfields">
+              <input type="text" name="email" id="email" placeholder="Email Address" autocomplete="off">
+              <img src="./images/icon-error.svg" alt="error" width="20px" height="20px">
+              <small>Error message</small>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="formfields">
+              <input type="password" name="pwd" id="pwd" placeholder="Password" autocomplete="off">
+              <img src="./images/icon-error.svg" alt="error" width="20px" height="20px">
+              <small>Error message</small> 
+            </div>
+          </div>
+
+          <div>
+            <button type="submit">Claim your free trial</button>
+          </div>
+        </form>
+        <p class="terms"><span id="clickbutton">By clicking the button, you are agreeing to our</span> <b><span id="tands">Terms and Services</span></b></p>
+      </div>
+    </div>
+  </div>
+ <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Florentina Antigha</a>.
+    </p>
+  </footer>
+</body>
+</html>
